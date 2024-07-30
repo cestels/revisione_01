@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisione_01</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>A N O D E</h1>
+        <center> <input type="range" min="400" max="700"
+            class="slider" id="slider" </center>
+            <script>
+                const slider = document.getElementById('slider');
+                const h1 = document.querySelector('h1');
+                slider.addEventListener('input', function() {
+                    const weight = slider.value;
+                    h1.style.fontVariationSettings = `'wght' ${weight}`;
+                });
+            </script>  
+            
+        <div class="container">
+            <img src="img\ANODE.png" width="500">   
+            <h2>A N O D E</h2>      
+        </div>
+        <div id="weather">
+            <p>...</p>
+            <script src="script.js"></script>
+        </div>
+    </div> 
+    <div>   
+         <button id="downloadButton">download</button>
+         <script src="download.js"> </script>
+    </div>
+   
+</body>
+
+
+</html>

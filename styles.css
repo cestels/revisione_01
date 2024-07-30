@@ -1,0 +1,82 @@
+@font-face {
+    font-family: 'VarTest';
+    src: url('5-04-VF.ttf') format('truetype');
+    font-weight: 400 700;
+    text-rendering: optimizeLegibility;
+}
+
+h1 {
+    font-family: 'VarTest';
+    font-size: 5rem;
+    text-align: center;
+    margin-bottom: 0px;
+}
+.slider {
+    width: 300px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 60px;
+}
+
+h2 {
+    font-family: 'VarTest';
+    font-size: 5rem;
+    animation: vars 8s infinite linear;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+button {
+      align-items: center;
+      appearance: none;
+      background-color: #fff;
+      border-radius: 10px;
+      border-style: none;
+      box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+      box-sizing: border-box;
+      color: #3c4043;
+      cursor: pointer;
+      display: block ;
+      margin: auto;
+      fill: currentcolor;
+      font-family: monospace;
+      font-size: 14px;
+      font-weight: 500;
+      height: 25px;
+      justify-content: center;
+      letter-spacing: .25px;
+      line-height: normal;
+      max-width: 100%;
+      overflow: visible;
+      padding: 2px 24px;
+      position: relative;
+      text-align: center;
+      text-transform: none;
+      transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      width: auto;
+      will-change: transform,opacity;
+      z-index: 0;
+}
+    
+
+@keyframes vars {
+    0%, 100% {
+        font-variation-settings: "wght" 400;
+    } 
+    50% {
+        font-variation-settings: "wght" 550;
+    } 
+    70% {
+        font-variation-settings: "wght" 700;
+    }
+}
+
+#weather {
+    font-size: 1.2em;
+    font-family: monospace;
+}
+
+
