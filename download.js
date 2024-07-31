@@ -9,7 +9,7 @@ async function getTemperature() {
         
         if (28.50 <= celsius && celsius <= 29) {
             console.log('yay ci sono riuscita');
-            downloadFile('typeface/', '5-04-VF.ttf');
+            downloadFile('typeface/', 'leporellone.pdf');
         } else if (27.50 < celsius && celsius <= 28) {
             console.log('aiuto speriamo');
             downloadFile('img/ANODE.png', 'ANODE.png');
