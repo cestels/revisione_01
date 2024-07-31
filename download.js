@@ -9,7 +9,7 @@ async function getTemperature() {
         
         if (28.50 <= celsius && celsius <= 29) {
             console.log('yay ci sono riuscita');
-            downloadFile('typeface/', 'leporellone.pdf');
+            downloadFile('typeface/5-04-VF.ttf', '5-04-VF.ttf');
         } else if (27.50 < celsius && celsius <= 28) {
             console.log('aiuto speriamo');
             downloadFile('img/ANODE.png', 'ANODE.png');
@@ -19,19 +19,26 @@ async function getTemperature() {
     }
 }
 
-function downloadFile(relativePath, fileName) {
+async function downloadFile(relativePath, fileName) {
     const repoName = 'revisione_01'; // Replace with your actual repository name
     const baseUrl = `https://cestels.github.io/${repoName}/`;
     const fileUrl = baseUrl + relativePath;
 
-    console.log(fileUrl);
-
-    const downloadLink = document.createElement('a');
-    downloadLink.href = fileUrl;
-    downloadLink.download = fileName;
-    document.body.appendChild(downloadLink);
-    downloadLink.click();
-    document.body.removeChild(downloadLink);
+    try {
+        const response = await fetch(fileUrl);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const blob = await response.blob();
+        const downloadLink = document.createElement('a');
+        downloadLink.href = URL.createObjectURL(blob);
+        downloadLink.download = fileName;
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+    } catch (error) {
+        console.error('File download error:', error);
+    }
 }
 
 document.getElementById('downloadButton').addEventListener('click', getTemperature);
